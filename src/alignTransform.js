@@ -20,6 +20,24 @@ const zeroWidth = {
   type: 0,
 };
 
+/**
+ *
+ * @description  A profile is valid if it has no invalid_reasons:
+ *   invalid_reasons hold the reason of the failure:
+ *   missing_essential if missing an essential claim,
+ *   too_big if too big
+ * @see https://github.com/solven-eu/mitrust-datasharing/issues/7081#issuecomment-749485311
+ * @see modules\dp-mvc\src\main\java\io\mitrust\dp\form\SfProfileHelper.java
+ * @param {object} profile - The profile object
+ * @returns {boolean} TRUE if a profile is valid
+ *
+ * @param profile
+ */
+// eslint-disable-next-line no-unused-vars
+const isValidProfile = (profile) => {
+  return !Array.isArray(profile.invalid_reasons) || profile.invalid_reasons.length === 0;
+};
+
 const shouldAlign = (tags, index, source) => {
   const tag = source[index].tokens.tag.replace('@', '');
   const includesTag = tags.includes(tag);
