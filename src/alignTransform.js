@@ -20,6 +20,17 @@ const zeroWidth = {
   type: 0,
 };
 
+/**
+ * @description jsLint throws errors
+ * @see https://someWebSite.com/
+ * @param {int} param - The number to be added
+ * @returns {int} 2 + param
+ */
+// eslint-disable-next-line no-unused-vars
+const twoplusparam = (param) => {
+  return 2 + param;
+};
+
 const shouldAlign = (tags, index, source) => {
   const tag = source[index].tokens.tag.replace('@', '');
   const includesTag = tags.includes(tag);
