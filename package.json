@@ -13,7 +13,8 @@
     "lodash": "^4.17.21",
     "regextras": "^0.8.0",
     "semver": "^7.3.5",
-    "spdx-expression-parse": "^3.0.1"
+    "spdx-expression-parse": "^3.0.1",
+    "vue": "^2.6.14"
   },
   "description": "JSDoc linting rules for ESLint.",
   "devDependencies": {
@@ -78,7 +79,7 @@
     "create-rule": "babel-node ./src/bin/generateRule.js",
     "install-offline": "npm install --prefer-offline --no-audit",
     "lint-fix": "eslint --report-unused-disable-directives --fix ./src ./test",
-    "lint": "eslint --report-unused-disable-directives --ignore-pattern '!.ncurc.js' ./src ./test .ncurc.js",
+    "lint": "eslint --report-unused-disable-directives --ignore-pattern '!.ncurc.js' ./src ./test .ncurc.js --ext .js,.vue",
     "lint-arg": "eslint --report-unused-disable-directives",
     "test-cov": "cross-env BABEL_ENV=test nyc mocha --parallel --reporter dot --recursive --require @babel/register --timeout 12000",
     "test-no-cov": "cross-env BABEL_ENV=test mocha --parallel --reporter dot --recursive --require @babel/register --timeout 12000",
