@@ -1,9 +1,15 @@
 {
-  "extends": "canonical",
   "root": true,
   "env": {
     "browser": false
   },
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "parser": "babel-eslint"
+  },
+  "plugins": ["vue","jsdoc"],
+  "extends": ["plugin:vue/recommended", "canonical"],
   "overrides": [{
     "files": ".ncurc.js",
     "parserOptions": {
@@ -17,11 +23,22 @@
       "strict": ["error", "global"]
     }
   }],
+  "env": {
+    "browser": true,
+    "node": true
+  },
   "rules": {
+    "linebreak-style": "off",
     "array-element-newline": 0,
     "filenames/match-regex": 0,
     "prefer-named-capture-group": 0,
     "import/extensions": 0,
-    "unicorn/prevent-abbreviations": 0
+    "unicorn/prevent-abbreviations": 0,
+
+
+    "jsdoc/require-description": ["error", { "descriptionStyle": "tag" }], // NOT Recommended: was 0
+    "jsdoc/require-param": "error", // Recommended
+    "jsdoc/require-param-description": "error" // Recommended
+
   }
 }
